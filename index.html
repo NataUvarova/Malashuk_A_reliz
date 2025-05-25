@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nirwave</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Шапка -->
+  <header>
+    <div class="logo">Nirwave</div>
+    <nav>
+      <a href="#home">Дім</a>
+      <a href="#catalog">Каталог</a>
+      <a href="about.html">Про нас</a>
+      <a href="#contacts">Контакти</a>
+      <button id="open-cart-btn" aria-label="Відкрити кошик">Кошик</button>
+    </nav>
+  </header>
+
+  <!-- Головна сторінка -->
+  <section id="home" class="hero">
+    <h1>Стиль у простоті</h1>
+    <p>Streetwear & Мінімалізм</p>
+  </section>
+
+  <!-- Товари дня (слайдшоу) -->
+  <!-- <section id="daily-products" class="daily-products">
+    <h2>Товари дня</h2>
+    <div class="daily-products-slider">
+      <!-- Тут JS підставить рандомні товари -->
+       <!-- <div class="daily-products" id="dailyProductsContainer"></div> -->
+    </div>
+  </section>
+  <section class="daily-products">
+  <h2>Товари дня</h2>
+  <div class="daily-products-slider" id="daily-products-slider">
+    <!-- Товари дня будуть додані через JS -->
+  </div>
+</section>
+
+  <!-- Каталог -->
+  <section id="catalog">
+    <h2>Каталог</h2>
+    <div class="filters">
+      <button class="filter-btn" data-category="all">Всі</button>
+      <button class="filter-btn" data-category="hoodie">Худі</button>
+      <button class="filter-btn" data-category="tshirt">Футболки</button>
+      <button class="filter-btn" data-category="pants">Штани</button>
+      <button class="filter-btn" data-category="accessory">Аксесуари</button>
+      <button class="filter-btn" data-category="bracelet">Браслети</button>
+    </div>
+
+    <div class="product-grid">
+      <!-- Приклади товарів -->
+
+      <!-- Худі -->
+      <div class="product-card" data-category="hoodie">
+        <img src="hoodie1.jpg" alt="Худі чорне" />
+        <h3>Худі чорне</h3>
+        <p class="price">₴1200</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+      <div class="product-card" data-category="hoodie">
+        <img src="hoodie2.jpg" alt="Худі сіре" />
+        <h3>Худі сіре</h3>
+        <p class="price">₴1100</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+
+      <!-- Футболки -->
+      <div class="product-card" data-category="tshirt">
+        <img src="tshirt1.jpg" alt="Футболка біла" />
+        <h3>Футболка біла</h3>
+        <p class="price">₴700</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+      <div class="product-card" data-category="tshirt">
+        <img src="tshirt2.jpg" alt="Футболка чорна" />
+        <h3>Футболка чорна</h3>
+        <p class="price">₴750</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+
+      <!-- Штани -->
+      <div class="product-card" data-category="pants">
+        <img src="pants1.jpg" alt="Штани чорні" />
+        <h3>Штани чорні</h3>
+        <p class="price">₴1500</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+      <div class="product-card" data-category="pants">
+        <img src="pants2.jpg" alt="Штани білі" />
+        <h3>Штани білі</h3>
+        <p class="price">₴1800</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+
+      <!-- Аксесуари -->
+      <div class="product-card" data-category="accessory">
+        <img src="accessory1.jpg" alt="Кепка чорна" />
+        <h3>Кепка чорна</h3>
+        <p class="price">₴400</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+      <div class="product-card" data-category="accessory">
+        <img src="accessory2.jpg" alt="Шапка біла" />
+        <h3>Шапка біла</h3>
+        <p class="price">₴700</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+
+      <!-- Браслети -->
+      <div class="product-card" data-category="bracelet">
+        <img src="bracelet1.jpg" alt="Браслет шкіряний" />
+        <h3>Браслет шкіряний</h3>
+        <p class="price">₴300</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+      <div class="product-card" data-category="bracelet">
+        <img src="bracelet2.jpg" alt="Браслет металевий" />
+        <h3>Браслет металевий</h3>
+        <p class="price">₴500</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Контакти -->
+  <footer id="contacts">
+    <h2>Контакти</h2>
+    <p>Email: info@nirwave.com</p>
+    <p>Instagram: @nirwave</p>
+  </footer>
+
+  <!-- Випливаючий кошик -->
+  <div id="cart" class="cart hidden" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <h3 id="cart-title">Кошик</h3>
+    <ul id="cart-items"></ul>
+    <p>Разом: <span id="cart-total">₴0</span></p>
+    <button id="close-cart">Закрити</button>
+    <button id="checkout-btn">Сплатити</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
